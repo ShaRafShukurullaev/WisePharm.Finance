@@ -109,8 +109,10 @@
     </Compile>
     <Compile Include="Enums\ApplicationPage.cs" />
     <Compile Include="Helpers\ExpressionHelpers.cs" />
+    <Compile Include="IoC\IoC.cs" />
     <Compile Include="ViewModels\Application\ApplicationViewModel.cs" />
     <Compile Include="ViewModels\Application\MainWindowViewModel.cs" />
+    <Compile Include="ViewModels\Base\BasePage.cs" />
     <Compile Include="ViewModels\Base\BaseViewModel.cs" />
     <Compile Include="ViewModels\Base\RelayCommand.cs" />
     <Compile Include="ViewModels\Base\RelayParametrizedCommand.cs" />
