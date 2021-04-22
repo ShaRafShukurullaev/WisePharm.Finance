@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31019.35
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WisePharm.Finance", "WisePharm.Finance\WisePharm.Finance.csproj", "{A90729A5-D511-47AB-AC44-A70AC53678EA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A90729A5-D511-47AB-AC44-A70AC53678EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A90729A5-D511-47AB-AC44-A70AC53678EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A90729A5-D511-47AB-AC44-A70AC53678EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A90729A5-D511-47AB-AC44-A70AC53678EA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {343CC78D-B3AB-41A8-BAC4-67EB1E0057AD}
+	EndGlobalSection
+EndGlobal
