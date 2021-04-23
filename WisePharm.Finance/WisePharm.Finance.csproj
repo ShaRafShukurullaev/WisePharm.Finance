@@ -117,6 +117,8 @@
     <Compile Include="Enums\ApplicationPage.cs" />
     <Compile Include="Helpers\ExpressionHelpers.cs" />
     <Compile Include="IoC\IoC.cs" />
+    <Compile Include="ValueConverters\ApplicationPageHelper.cs" />
+    <Compile Include="ValueConverters\BaseValueConverter.cs" />
     <Compile Include="ViewModels\Application\ApplicationViewModel.cs" />
     <Compile Include="ViewModels\Application\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\Base\BasePage.cs" />
