@@ -60,9 +60,9 @@ namespace WisePharm.Finance
 
             // If the current page hasn't changed
             // just update the view model
-            if(newPageframe.Content is )
+            //if(newPageframe.Content is )
 
-
+            return d;
 
         }
 

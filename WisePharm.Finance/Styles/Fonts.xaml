@@ -12,12 +12,12 @@
     <system:Double x:Key="FontSizeXXLarge">30</system:Double>
 
     <system:String x:Key="FontAwesomeHomeIcon">&#xf015;</system:String>
-    <system:String x:Key="FontAwesomeCartIcon">&#xf217;</system:String>
-    <system:String x:Key="FontAwesomeBuyIcon">&#xf552;</system:String>
+    <system:String x:Key="FontAwesomeShoppingCartIcon">&#xf07a;</system:String>
+    <system:String x:Key="FontAwesomeBuyIcon">&#xf0b1;</system:String>
     <system:String x:Key="FontAwesomeDollarIcon">&#xf155;</system:String>
-    <system:String x:Key="FontAwesomeBackIcon">&#xf359;</system:String>
-    <system:String x:Key="FontAwesomeChartIcon">&#xf201;</system:String>
-    <system:String x:Key="FontAwesomeServiceIcon">&#xf03a;</system:String>
-    <system:String x:Key="FontAwesomeLogoutIcon">&#xf410;</system:String>
+    <system:String x:Key="FontAwesomeBackIcon">&#xf0a8;</system:String>
+    <system:String x:Key="FontAwesomeChartIcon">&#xf1fe;</system:String>
+    <system:String x:Key="FontAwesomeServiceIcon">&#xf085;</system:String>
+    <system:String x:Key="FontAwesomeLogoutIcon">&#xf08b;</system:String>
 
 </ResourceDictionary>
