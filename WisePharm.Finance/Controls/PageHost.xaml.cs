@@ -9,7 +9,7 @@ namespace WisePharm.Finance
     /// </summary>
     public partial class PageHost : UserControl
     {
-        #region Dependency Properties 
+        #region Dependency Properties
 
         /// <summary>
         /// The current page to show in the page host
@@ -38,7 +38,7 @@ namespace WisePharm.Finance
         public static readonly DependencyProperty CurrentPageViewModeProperty =
             DependencyProperty.Register(nameof(CurrentPageViewMode), typeof(BaseViewModel), typeof(PageHost), new UIPropertyMetadata());
 
-        #endregion        
+#endregion
 
         #region Property Event changed
 
@@ -60,9 +60,15 @@ namespace WisePharm.Finance
 
             // If the current page hasn't changed
             // just update the view model
-            if(newPageframe.Content is )
+            if (newPageframe.Content is BasePage basePage && basePage.ToApplicationPage() == currentPage)
+            {
+                basePage.ViewModelObject = currentPageViewModel;
 
+                return value;
+            }
 
+            // Store the current page content as the old page
+            var oldPageContent = newPageframe.Content;
 
             // Remove current page from new page frame
             newPageframe.Content = null;
