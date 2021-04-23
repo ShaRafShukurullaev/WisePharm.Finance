@@ -60,15 +60,9 @@ namespace WisePharm.Finance
 
             // If the current page hasn't changed
             // just update the view model
-            if (newPageframe.Content is BasePage basePage && basePage.ToApplicationPage() == currentPage)
-            {
-                basePage.ViewModelObject = currentPageViewModel;
+            if(newPageframe.Content is )
 
-                return value;
-            }
 
-            // Store the current page content as the old page
-            var oldPageContent = newPageframe.Content;
 
             // Remove current page from new page frame
             newPageframe.Content = null;

@@ -23,7 +23,7 @@
         <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
             <StackPanel Margin="0 20">
                 <local:SideMenuButton Text="Главный" Icon="{StaticResource FontAwesomeHomeIcon}"/>
-                <local:SideMenuButton Text="Покупка" Icon="{StaticResource FontAwesomeCartIcon}"/>
+                <local:SideMenuButton Text="Покупка" Icon="{StaticResource FontAwesomeShoppingCartIcon}"/>
                 <local:SideMenuButton Text="Продажа" Icon="{StaticResource FontAwesomeBuyIcon}"/>
                 <local:SideMenuButton Text="Касса" Icon="{StaticResource FontAwesomeDollarIcon}"/>
                 <local:SideMenuButton Text="Возврат" Icon="{StaticResource FontAwesomeBackIcon}"/>
