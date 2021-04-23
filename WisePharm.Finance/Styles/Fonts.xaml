@@ -1,5 +1,23 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:WisePharm.Finance.Styles">
-    
+                    xmlns:local="clr-namespace:WisePharm.Finance.Styles" xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <FontFamily x:Key="FontAwesome">pack://application;,,,/Fonts/#FontAwesome</FontFamily>
+
+    <system:Double x:Key="FontSizeSmaller">10</system:Double>
+    <system:Double x:Key="FontSizeSmall">12</system:Double>
+    <system:Double x:Key="FontSizeRegular">14</system:Double>
+    <system:Double x:Key="FontSizeLarge">20</system:Double>
+    <system:Double x:Key="FontSizeXLarge">24</system:Double>
+    <system:Double x:Key="FontSizeXXLarge">30</system:Double>
+
+    <system:String x:Key="FontAwesomeHomeIcon">&#xf015;</system:String>
+    <system:String x:Key="FontAwesomeCartIcon">&#xf217;</system:String>
+    <system:String x:Key="FontAwesomeBuyIcon">&#xf552;</system:String>
+    <system:String x:Key="FontAwesomeDollarIcon">&#xf155;</system:String>
+    <system:String x:Key="FontAwesomeBackIcon">&#xf359;</system:String>
+    <system:String x:Key="FontAwesomeChartIcon">&#xf201;</system:String>
+    <system:String x:Key="FontAwesomeServiceIcon">&#xf03a;</system:String>
+    <system:String x:Key="FontAwesomeLogoutIcon">&#xf410;</system:String>
+
 </ResourceDictionary>

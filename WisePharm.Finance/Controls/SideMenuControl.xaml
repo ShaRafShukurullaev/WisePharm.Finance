@@ -5,8 +5,59 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WisePharm.Finance"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        
+            >
+    <Grid Width="231" Background="{StaticResource LightGreenBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Image Source="/Images/Brand.png"
+               Height="50"
+               Width="100"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Center"
+               Margin="50 20"/>
+
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
+            <StackPanel Margin="0 20">
+                <local:SideMenuButton Text="Главный" Icon="{StaticResource FontAwesomeHomeIcon}"/>
+                <local:SideMenuButton Text="Покупка" Icon="{StaticResource FontAwesomeCartIcon}"/>
+                <local:SideMenuButton Text="Продажа" Icon="{StaticResource FontAwesomeBuyIcon}"/>
+                <local:SideMenuButton Text="Касса" Icon="{StaticResource FontAwesomeDollarIcon}"/>
+                <local:SideMenuButton Text="Возврат" Icon="{StaticResource FontAwesomeBackIcon}"/>
+                <local:SideMenuButton Text="Отчёты" Icon="{StaticResource FontAwesomeChartIcon}"/>
+                <local:SideMenuButton Text="Сервис" Icon="{StaticResource FontAwesomeServiceIcon}"/>
+                <local:SideMenuButton Text="Выйти" Icon="{StaticResource FontAwesomeLogoutIcon}"/>
+            </StackPanel>
+        </ScrollViewer>
+
+        <Grid Grid.Row="2"
+              VerticalAlignment="Bottom">
+            <StackPanel Orientation="Horizontal" Margin="20 0 0 20">
+                <StackPanel VerticalAlignment="Center">
+                    <TextBlock Text="13:29"
+                               FontSize="{StaticResource FontSizeLarge}"
+                               Foreground="{StaticResource BackgroundWhiteBrush}"
+                               FontWeight="Medium"/>
+                    <TextBlock Text="22/07/2020"
+                               FontSize="{StaticResource FontSizeSmaller}"
+                               Foreground="{StaticResource BackgroundWhiteBrush}"
+                               />
+                </StackPanel>
+
+                <StackPanel VerticalAlignment="Center"
+                            Margin="40 0 0 0">
+                    <TextBlock Text="Store Name"
+                               FontSize="{StaticResource FontSizeRegular}"
+                               Foreground="{StaticResource BackgroundWhiteBrush}"/>
+                    <TextBlock Text="22/07/2020"
+                               FontSize="{StaticResource FontSizeSmaller}"
+                               Foreground="{StaticResource BackgroundWhiteBrush}"
+                               />
+                </StackPanel>
+            </StackPanel>
+        </Grid>
     </Grid>
 </UserControl>
