@@ -60,27 +60,42 @@ namespace WisePharm.Finance
 
             // If the current page hasn't changed
             // just update the view model
-            if(newPageframe.Content is )
+            if (newPageframe.Content is BasePage basePage && basePage.ToApplicationPage() == currentPage)
+            {
+                basePage.ViewModelObject = currentPageViewModel;
 
+                return value;
+            }
 
+            // Store the current page content as the old page
+            var oldPageContent = newPageframe.Content;
 
+            // Remove current page from new page frame
+            newPageframe.Content = null;
+
+            // Move the previous page into the old page frame
+            oldPageframe.Content = oldPageContent;
+
+            //// Animate out previous page when the Loaded event fires
+            //// right after this call due to moving frames
+            //if (oldPageContent is BasePage oldPage)
+            //{
+            //    // Tell old page to animate out
+            //    oldPage.ShouldAnimateOut = true;
+
+            //    // Once it is done, remove it
+            //    Task.Delay((int)(oldPage.SlideSeconds * 1000)).ContinueWith((t) =>
+            //    {
+            //        // Remove old page
+            //        Application.Current.Dispatcher.Invoke(() => oldPageFrame.Content = null);
+            //    });
+            //}
+
+            // Set the new page content
+            newPageframe.Content = currentPage.ToBasePage(currentPageViewModel);
+
+            return value;
         }
-
-
-
-        #endregion
-
-
-        #region Constructor 
-
-        /// <summary>
-        /// Default constructor 
-        /// </summary>
-        public PageHost()
-        {
-            InitializeComponent();
-        }
-
         #endregion
     }
 }
