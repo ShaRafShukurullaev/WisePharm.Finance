@@ -77,6 +77,42 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Images\SVGs\LogOutSVG.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Images\SVGs\ServiceSVG.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Images\SVGs\ChartSVG.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Images\SVGs\BackSVG.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Images\SVGs\DollarSVG.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Images\SVGs\HomeSVG.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Images\SVGs\BuySVG.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Images\SVGs\ShoppingSVG.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Images\SVGs\LogoSVG.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Styles\Fonts.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -116,6 +152,33 @@
     </Compile>
     <Compile Include="Enums\ApplicationPage.cs" />
     <Compile Include="Helpers\ExpressionHelpers.cs" />
+    <Compile Include="Images\SVGs\LogOutSVG.xaml.cs">
+      <DependentUpon>LogOutSVG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Images\SVGs\ServiceSVG.xaml.cs">
+      <DependentUpon>ServiceSVG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Images\SVGs\ChartSVG.xaml.cs">
+      <DependentUpon>ChartSVG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Images\SVGs\BackSVG.xaml.cs">
+      <DependentUpon>BackSVG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Images\SVGs\DollarSVG.xaml.cs">
+      <DependentUpon>DollarSVG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Images\SVGs\HomeSVG.xaml.cs">
+      <DependentUpon>HomeSVG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Images\SVGs\BuySVG.xaml.cs">
+      <DependentUpon>BuySVG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Images\SVGs\ShoppingSVG.xaml.cs">
+      <DependentUpon>ShoppingSVG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Images\SVGs\LogoSVG.xaml.cs">
+      <DependentUpon>LogoSVG.xaml</DependentUpon>
+    </Compile>
     <Compile Include="IoC\IoC.cs" />
     <Compile Include="ValueConverters\ApplicationPageHelper.cs" />
     <Compile Include="ValueConverters\BaseValueConverter.cs" />

@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="WisePharm.Finance.ChartSVG"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WisePharm.Finance"
+             mc:Ignorable="d" 
+             x:Name="Chart"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Viewbox>
+        <Grid>
+            <Path Data="M2.2475 13.8833L5.50583 10.625L7.86333 12.9817L11.6725 9.17332L13.1667 10.6667V6.49999H9L10.4942 7.99416L7.86333 10.625L5.50666 8.26749L1.385 12.3892C0.909937 11.3225 0.665167 10.1677 0.666663 8.99999C0.666663 4.39749 4.3975 0.666656 9 0.666656C13.6025 0.666656 17.3333 4.39749 17.3333 8.99999C17.3333 13.6025 13.6025 17.3333 9 17.3333C7.68166 17.3342 6.38198 17.0219 5.208 16.422C4.03402 15.8222 3.01933 14.9521 2.2475 13.8833Z" Fill="{Binding BGColor, ElementName=Chart}"/>
+        </Grid>
+    </Viewbox>
+</UserControl>

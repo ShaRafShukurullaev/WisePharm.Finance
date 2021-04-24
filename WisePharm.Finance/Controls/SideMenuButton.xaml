@@ -5,19 +5,21 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WisePharm.Finance"
              mc:Ignorable="d" >
-    <Button Height="50px" Margin="10 0 0 5">
-        <Button.Style>
-            <Style TargetType="{x:Type Button}">
+
+    <RadioButton Height="50px" Margin="10 0 0 5">
+        <ToggleButton.Style>
+            <Style TargetType="{x:Type RadioButton}">
                 <Setter Property="Foreground" Value="{StaticResource BackgroundWhiteBrush}"/>
                 <Setter Property="Background" Value="Transparent"/>
                 <Setter Property="FontSize" Value="{StaticResource FontSizeRegular}"/>
                 <Setter Property="FontFamily" Value="Montserrat"/>
                 <Setter Property="FontWeight" Value="500"/>
+                <Setter Property="GroupName" Value="RadioGroup" />
                 <Setter Property="BorderThickness" Value="0"/>
                 <Setter Property="Cursor" Value="Hand"/>
                 <Setter Property="Template">
                     <Setter.Value>
-                        <ControlTemplate TargetType="{x:Type Button}">
+                        <ControlTemplate TargetType="{x:Type RadioButton}">
                             <Border x:Name="border" 
                                     Padding="30 0 0 0"
                                     CornerRadius="25 0 0 25"
@@ -26,7 +28,7 @@
                                     Background="{TemplateBinding Background}"
                                     BorderBrush="{TemplateBinding BorderBrush}" 
                                     BorderThickness="{TemplateBinding BorderThickness}"                             
-                                    SnapsToDevicePixels="true"> 
+                                    SnapsToDevicePixels="true">
 
                                 <Grid >
                                     <Grid.ColumnDefinitions>
@@ -50,7 +52,18 @@
 
                             </Border>
                             <ControlTemplate.Triggers>
-                                <EventTrigger RoutedEvent="MouseEnter">
+                           
+                                <Trigger Property="IsChecked" Value="True">
+                                    <Setter Property="Background" Value="{StaticResource BackgroundWhiteBrush}"/>
+                                    <Setter Property="Foreground" Value="{StaticResource LightGreenBrush}"/>
+                                </Trigger>
+
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="{StaticResource BackgroundWhiteBrush}"/>
+                                    <Setter Property="Foreground" Value="{StaticResource LightGreenBrush}"/>
+                                </Trigger>
+
+                                <!--<EventTrigger RoutedEvent="MouseEnter">
                                     <BeginStoryboard>
                                         <Storyboard>
                                             <ColorAnimation Duration="0:0:0.2" To="{StaticResource BackgroundWhite}" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
@@ -65,17 +78,13 @@
                                             <ColorAnimation Duration="0:0:0.1" To="{StaticResource BackgroundWhite}" Storyboard.TargetName="border" Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)"/>
                                         </Storyboard>
                                     </BeginStoryboard>
-                                </EventTrigger>
-                                <Trigger Property="IsPressed" Value="True">
-                                    <Setter Property="Background" TargetName="border" Value="{StaticResource BackgroundWhiteBrush}"/>
-                                    <Setter Property="TextElement.Foreground" TargetName="border" Value="{StaticResource LightGreenBrush}"/>
-                                </Trigger>
+                                </EventTrigger>-->
                             </ControlTemplate.Triggers>
                         </ControlTemplate>
                     </Setter.Value>
                 </Setter>
             </Style>
-        </Button.Style>
-    </Button>    
-    
+        </ToggleButton.Style>
+    </RadioButton>
+
 </UserControl>

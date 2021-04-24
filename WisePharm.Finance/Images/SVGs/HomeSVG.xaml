@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="WisePharm.Finance.HomeSVG"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WisePharm.Finance"
+             mc:Ignorable="d" 
+             x:Name="Home"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Viewbox>
+        <Grid>
+            <!-- Logo this application -->
+            <Path Data="M13.75 14C13.75 14.1989 13.671 14.3897 13.5303 14.5303C13.3897 14.671 13.1989 14.75 13 14.75H1C0.801088 14.75 0.610322 14.671 0.46967 14.5303C0.329018 14.3897 0.25 14.1989 0.25 14V6.1175C0.249921 6.00321 0.275963 5.89041 0.326137 5.78773C0.376311 5.68504 0.44929 5.59518 0.5395 5.525L6.5395 0.858502C6.67116 0.756086 6.8332 0.700481 7 0.700481C7.1668 0.700481 7.32884 0.756086 7.4605 0.858502L13.4605 5.525C13.5507 5.59518 13.6237 5.68504 13.6739 5.78773C13.724 5.89041 13.7501 6.00321 13.75 6.1175V14Z" Fill="{Binding BGColor, ElementName=Home}"/>
+        </Grid>
+    </Viewbox>
+</UserControl>

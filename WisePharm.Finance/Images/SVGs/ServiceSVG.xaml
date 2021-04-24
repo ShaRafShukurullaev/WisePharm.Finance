@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="WisePharm.Finance.ServiceSVG"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WisePharm.Finance"
+             mc:Ignorable="d" 
+             x:Name="Service"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Viewbox>
+        <Grid>
+            <Path Data="M3.54595 7.25357e-09H14.2365C14.3548 -1.645e-05 14.4715 0.0279716 14.5769 0.0816763C14.6824 0.135381 14.7736 0.213278 14.8432 0.309L17.7104 4.251C17.7614 4.32114 17.7865 4.40678 17.7815 4.49334C17.7764 4.57989 17.7415 4.66202 17.6827 4.72575L9.16645 13.9515C9.13134 13.9894 9.08877 14.0197 9.0414 14.0404C8.99403 14.0611 8.94289 14.0718 8.8912 14.0718C8.8395 14.0718 8.78837 14.0611 8.741 14.0404C8.69363 14.0197 8.65106 13.9894 8.61595 13.9515L0.0996996 4.7265C0.0407129 4.66272 0.00569852 4.58045 0.000637289 4.49372C-0.00442394 4.407 0.020782 4.3212 0.0719496 4.251L2.9392 0.309C3.00878 0.213278 3.10003 0.135381 3.20549 0.0816763C3.31094 0.0279716 3.42761 -1.645e-05 3.54595 7.25357e-09Z" Fill="{Binding BGColor, ElementName=Service}"/>
+        </Grid>
+    </Viewbox>
+</UserControl>
