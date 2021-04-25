@@ -18,10 +18,16 @@
             </Grid.ColumnDefinitions>
 
             <!-- Side menu-->
-            <local:SideMenuControl />
+            <local:SideMenuControl Width="250">
+                <local:MenuButtonList/>
+            </local:SideMenuControl>
 
             <!-- Page Host to replace page-->
-            <local:PageHost Grid.Column="1" />
+            <local:PageHost Grid.Column="1" 
+                            CurrentPage="{Binding ApplicationViewModel.CurrentPage, 
+                                Source={x:Static local:ViewModelLocator.Instance}}"
+                            CurrentPageViewMode="{Binding ApplicationViewModel.CurrentPageViewModel,
+                                        Source={x:Static local:ViewModelLocator.Instance}}" />
 
             <!-- Dimmerly Overlay-->
             <Border Grid.ColumnSpan="2"/>

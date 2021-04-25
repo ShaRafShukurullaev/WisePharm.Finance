@@ -16,8 +16,11 @@ namespace WisePharm.Finance
             // Find the appropriate page
             switch (page)
             {
-                //case ApplicationPage.Login:
-                //    return new LoginPage(viewModel as LoginPageViewModel);
+                case ApplicationPage.Login:
+                    return new LoginPage(viewModel as LoginPageViewModel);
+
+                case ApplicationPage.MainPage:
+                    return new MainPage(viewModel as MainPageViewModel);
 
 
                 default:
@@ -35,8 +38,11 @@ namespace WisePharm.Finance
         {
             // Find application page that matches the base page
 
-            //if (page is LoginPage)
-            //    return ApplicationPage.Login;
+            if (page is LoginPage)
+                return ApplicationPage.Login;
+
+            if (page is MainPage)
+                return ApplicationPage.MainPage;
 
 
             return default(ApplicationPage);

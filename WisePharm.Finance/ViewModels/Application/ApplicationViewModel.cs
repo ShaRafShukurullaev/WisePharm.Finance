@@ -11,7 +11,7 @@
         /// <summary>
         /// The current page of the application
         /// </summary>
-        public ApplicationPage CurrentPage { get; private set; } = ApplicationPage.Login;
+        public ApplicationPage CurrentPage { get; private set; } = ApplicationPage.MainPage;
 
         /// <summary>
         /// The current page view model 
@@ -38,6 +38,30 @@
         /// such as when a popup is visible or the window is not focused
         /// </summary>
         public bool DimmerOverlayVisible { get; set; }
+
+        #endregion
+
+        #region Public methods
+
+        /// <summary>
+        /// The method that controls page connection
+        /// </summary>
+        /// <param name="page"></param>
+        /// <param name="viewModel"></param>
+        public void GotoPage(ApplicationPage page, BaseViewModel viewModel = null)
+        {
+            CurrentPageViewModel = viewModel;
+
+            var different = CurrentPage != page;
+
+            CurrentPage = page;
+
+            if (!different)
+                OnPropertyChanged(nameof(CurrentPage));
+
+            SideMenuVisible = page != ApplicationPage.Login;
+        }
+
 
         #endregion
     }

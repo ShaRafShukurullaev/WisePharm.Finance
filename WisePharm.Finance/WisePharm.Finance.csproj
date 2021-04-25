@@ -65,11 +65,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Controls\SideMenuButton.xaml">
+    <Page Include="Controls\MainMenu\MenuButtonList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\SideMenuControl.xaml">
+    <Page Include="Controls\MainMenu\SideMenuButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\MainMenu\SideMenuControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -113,6 +117,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\LoginPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Styles\Fonts.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -143,10 +155,13 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Controls\SideMenuButton.xaml.cs">
+    <Compile Include="Controls\MainMenu\MenuButtonList.xaml.cs">
+      <DependentUpon>MenuButtonList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MainMenu\SideMenuButton.xaml.cs">
       <DependentUpon>SideMenuButton.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\SideMenuControl.xaml.cs">
+    <Compile Include="Controls\MainMenu\SideMenuControl.xaml.cs">
       <DependentUpon>SideMenuControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\PageHost.xaml.cs">
@@ -182,14 +197,25 @@
       <DependentUpon>LogoSVG.xaml</DependentUpon>
     </Compile>
     <Compile Include="IoC\IoC.cs" />
+    <Compile Include="Pages\LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ValueConverters\ApplicationPageHelper.cs" />
     <Compile Include="ValueConverters\BaseValueConverter.cs" />
     <Compile Include="ViewModels\Application\ApplicationViewModel.cs" />
     <Compile Include="ViewModels\Application\MainWindowViewModel.cs" />
+    <Compile Include="ViewModels\Application\ViewModelLocator.cs" />
     <Compile Include="ViewModels\Base\BasePage.cs" />
     <Compile Include="ViewModels\Base\BaseViewModel.cs" />
     <Compile Include="ViewModels\Base\RelayCommand.cs" />
     <Compile Include="ViewModels\Base\RelayParametrizedCommand.cs" />
+    <Compile Include="ViewModels\MainMenu\MainMenuItemViewModel.cs" />
+    <Compile Include="ViewModels\MainMenu\MainMenuViewModel.cs" />
+    <Compile Include="ViewModels\Pages\LoginPageViewModel.cs" />
+    <Compile Include="ViewModels\Pages\MainPageViewModel.cs" />
     <Compile Include="Windows\DialogWindow.xaml.cs">
       <DependentUpon>DialogWindow.xaml</DependentUpon>
     </Compile>
@@ -218,6 +244,24 @@
     </EmbeddedResource>
     <None Include="app.config" />
     <Resource Include="Fonts\fontawesome-webfont.ttf" />
+    <Resource Include="Fonts\Montserrat-Black.ttf" />
+    <Resource Include="Fonts\Montserrat-BlackItalic.ttf" />
+    <Resource Include="Fonts\Montserrat-Bold.ttf" />
+    <Resource Include="Fonts\Montserrat-BoldItalic.ttf" />
+    <Resource Include="Fonts\Montserrat-ExtraBold.ttf" />
+    <Resource Include="Fonts\Montserrat-ExtraBoldItalic.ttf" />
+    <Resource Include="Fonts\Montserrat-ExtraLight.ttf" />
+    <Resource Include="Fonts\Montserrat-ExtraLightItalic.ttf" />
+    <Resource Include="Fonts\Montserrat-Italic.ttf" />
+    <Resource Include="Fonts\Montserrat-Light.ttf" />
+    <Resource Include="Fonts\Montserrat-LightItalic.ttf" />
+    <Resource Include="Fonts\Montserrat-Medium.ttf" />
+    <Resource Include="Fonts\Montserrat-MediumItalic.ttf" />
+    <Resource Include="Fonts\Montserrat-Regular.ttf" />
+    <Resource Include="Fonts\Montserrat-SemiBold.ttf" />
+    <Resource Include="Fonts\Montserrat-SemiBoldItalic.ttf" />
+    <Resource Include="Fonts\Montserrat-Thin.ttf" />
+    <Resource Include="Fonts\Montserrat-ThinItalic.ttf" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -227,7 +271,6 @@
   <ItemGroup>
     <Folder Include="AttachedProperties\" />
     <Folder Include="Dialog\" />
-    <Folder Include="Pages\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="FodyWeavers.xml" />

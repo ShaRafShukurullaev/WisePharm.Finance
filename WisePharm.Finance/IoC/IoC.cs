@@ -19,9 +19,14 @@ namespace WisePharm.Finance
         public static IKernel Kernel { get; private set; } = new StandardKernel();
 
         /// <summary>
-        /// 
+        /// The static property that allows to get object from <see cref="ApplicationViewModel"/>
         /// </summary>
         public static ApplicationViewModel ApplicationVM => IoC.Get<ApplicationViewModel>();
+
+        /// <summary>
+        /// The static property that allows to get object from <see cref="MainMenuViewModel"/>
+        /// </summary>
+        public static MainMenuViewModel MainMenu => IoC.Get<MainMenuViewModel>();
 
         #endregion
 

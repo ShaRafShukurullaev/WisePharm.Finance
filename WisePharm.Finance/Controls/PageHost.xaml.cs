@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -38,7 +39,22 @@ namespace WisePharm.Finance
         public static readonly DependencyProperty CurrentPageViewModeProperty =
             DependencyProperty.Register(nameof(CurrentPageViewMode), typeof(BaseViewModel), typeof(PageHost), new UIPropertyMetadata());
 
-#endregion
+        #endregion
+
+        #region Constructor
+
+        /// <summary>
+        /// Default constructor
+        /// </summary>
+        public PageHost()
+        {
+            InitializeComponent();
+
+            if (DesignerProperties.GetIsInDesignMode(this))
+                NewPage.Content = IoC.ApplicationVM.CurrentPage.ToBasePage();
+        }
+
+        #endregion
 
         #region Property Event changed
 
@@ -96,6 +112,7 @@ namespace WisePharm.Finance
 
             return value;
         }
+
         #endregion
     }
 }
