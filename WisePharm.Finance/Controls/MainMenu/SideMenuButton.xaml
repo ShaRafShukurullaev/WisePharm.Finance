@@ -41,14 +41,16 @@
 
                                     <TextBlock VerticalAlignment="Center"
                                                HorizontalAlignment="Left"
-                                                   FontFamily="{StaticResource FontAwesome}"
-                                                   Text="{Binding Icon}"
-                                                   FontSize="{StaticResource FontSizeLarge}"
-                                                   Foreground="{TemplateBinding Foreground}"/>
+                                               Name="Icon"
+                                               FontFamily="{StaticResource FontAwesome}"
+                                               Text="{Binding Icon}"
+                                               FontSize="{StaticResource FontSizeLarge}"
+                                               Foreground="{TemplateBinding Foreground}"/>
 
                                     <TextBlock Text="{Binding Text}"
                                                    VerticalAlignment="Center"
                                                    Grid.Column="1"
+                                                   Name="Text"
                                                    TextWrapping="Wrap"
                                                    Margin="10 0 0 0"
                                                    FontSize="{TemplateBinding FontSize}"
@@ -64,7 +66,8 @@
                         <ControlTemplate.Triggers>
 
                             <DataTrigger Binding="{Binding IsSelected}" Value="True">
-                                <Setter Property="Foreground" Value="{StaticResource LightGreenBrush}"/>
+                                <Setter Property="Foreground" TargetName="Icon" Value="{StaticResource LightGreenBrush}"/>
+                                <Setter Property="Foreground" TargetName="Text" Value="{StaticResource LightGreenBrush}"/>
                                 <Setter Property="Background" TargetName="background" Value="{StaticResource BackgroundWhiteBrush}"/>
                             </DataTrigger>
                            
