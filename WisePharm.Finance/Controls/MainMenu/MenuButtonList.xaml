@@ -11,12 +11,10 @@
         <ScrollViewer VerticalScrollBarVisibility="Auto" 
                       Focusable="False">
 
-            <!--Asosiy menu listini boglanmoqda-->
             <ItemsControl ItemsSource="{Binding MainMenuViewModel.items, Source={x:Static local:ViewModelLocator.Instance}}">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
 
-                        <!--Har bir menu itemi berilmoqda-->
                         <local:SideMenuButton Focusable="False"/>
 
                     </DataTemplate>

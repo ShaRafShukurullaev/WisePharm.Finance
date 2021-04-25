@@ -140,13 +140,10 @@ namespace WisePharm.Finance
                     IoC.ApplicationVM.GotoPage(page, new LoginPageViewModel());
                 }
 
-                // Menudagi tanlangan buttonni tanlanmagan 
                 items[SelectedIndex].IsSelected = false;
 
-                // Tanlangan indexni belgilash
                 SelectedIndex = index;
 
-                // Select this menu button
                 items[index].IsSelected = true;
             });
         }
