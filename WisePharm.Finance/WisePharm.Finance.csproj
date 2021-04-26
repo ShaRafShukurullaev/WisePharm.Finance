@@ -197,6 +197,8 @@
       <DependentUpon>LogoSVG.xaml</DependentUpon>
     </Compile>
     <Compile Include="IoC\IoC.cs" />
+    <Compile Include="IoC\IUIManager.cs" />
+    <Compile Include="IoC\UIManager.cs" />
     <Compile Include="Pages\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>

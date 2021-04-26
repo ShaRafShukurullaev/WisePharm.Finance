@@ -10,6 +10,7 @@ namespace WisePharm.Finance
     /// </summary>
     public partial class PageHost : UserControl
     {
+
         #region Dependency Properties
 
         /// <summary>
@@ -17,29 +18,37 @@ namespace WisePharm.Finance
         /// </summary>
         public ApplicationPage CurrentPage
         {
-            get { return (ApplicationPage)GetValue(CurrentPageProperty); }
-            set { SetValue(CurrentPageProperty, value); }
+            get => (ApplicationPage)GetValue(CurrentPageProperty);
+            set => SetValue(CurrentPageProperty, value);
         }
 
-        // Using a DependencyProperty as the backing store for CurrentPage.  This enables animation, styling, binding, etc...
+        /// <summary>
+        /// Registers <see cref="CurrentPage"/> as a dependency property
+        /// </summary>
         public static readonly DependencyProperty CurrentPageProperty =
             DependencyProperty.Register(nameof(CurrentPage), typeof(ApplicationPage), typeof(PageHost), new UIPropertyMetadata(default(ApplicationPage), null, CurrentPagePropertyChanged));
 
 
         /// <summary>
-        /// The current page view model 
+        /// The current page to show in the page host
         /// </summary>
-        public BaseViewModel CurrentPageViewMode
+        public BaseViewModel CurrentPageViewModel
         {
-            get { return (BaseViewModel)GetValue(CurrentPageViewModeProperty); }
-            set { SetValue(CurrentPageViewModeProperty, value); }
+            get => (BaseViewModel)GetValue(CurrentPageViewModelProperty);
+            set => SetValue(CurrentPageViewModelProperty, value);
         }
 
-        // Using a DependencyProperty as the backing store for CurrentPageViewMode.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty CurrentPageViewModeProperty =
-            DependencyProperty.Register(nameof(CurrentPageViewMode), typeof(BaseViewModel), typeof(PageHost), new UIPropertyMetadata());
+        /// <summary>
+        /// Registers <see cref="CurrentPageViewModel"/> as a dependency property
+        /// </summary>
+        public static readonly DependencyProperty CurrentPageViewModelProperty =
+            DependencyProperty.Register(nameof(CurrentPageViewModel),
+                typeof(BaseViewModel), typeof(PageHost),
+                new UIPropertyMetadata());
+
 
         #endregion
+
 
         #region Constructor
 
@@ -56,44 +65,45 @@ namespace WisePharm.Finance
 
         #endregion
 
-        #region Property Event changed
+
+        #region Property Changed Events
 
         /// <summary>
         /// Called when the <see cref="CurrentPage"/> value has changed
         /// </summary>
         /// <param name="d"></param>
-        /// <param name="baseValue"></param>
-        /// <returns></returns>
+        /// <param name="e"></param>
         private static object CurrentPagePropertyChanged(DependencyObject d, object value)
         {
-            // Get current values 
+            // Get current values
             var currentPage = (ApplicationPage)value;
-            var currentPageViewModel = d.GetValue(CurrentPageViewModeProperty);
+            var currentPageViewModel = d.GetValue(CurrentPageViewModelProperty);
 
-            // Get the frames 
-            var newPageframe = (d as PageHost).NewPage;
-            var oldPageframe = (d as PageHost).OldPage;
+            // Get the frames
+            var newPageFrame = (d as PageHost).NewPage;
+            var oldPageFrame = (d as PageHost).OldPage;
 
             // If the current page hasn't changed
             // just update the view model
-            if (newPageframe.Content is BasePage basePage && basePage.ToApplicationPage() == currentPage)
+            if (newPageFrame.Content is BasePage page && page.ToApplicationPage() == currentPage)
             {
-                basePage.ViewModelObject = currentPageViewModel;
+                // Just update the view model
+                page.ViewModelObject = currentPageViewModel;
 
                 return value;
             }
 
             // Store the current page content as the old page
-            var oldPageContent = newPageframe.Content;
+            var oldPageContent = newPageFrame.Content;
 
             // Remove current page from new page frame
-            newPageframe.Content = null;
+            newPageFrame.Content = null;
 
             // Move the previous page into the old page frame
-            oldPageframe.Content = oldPageContent;
+            oldPageFrame.Content = oldPageContent;
 
-            //// Animate out previous page when the Loaded event fires
-            //// right after this call due to moving frames
+            // Animate out previous page when the Loaded event fires
+            // right after this call due to moving frames
             //if (oldPageContent is BasePage oldPage)
             //{
             //    // Tell old page to animate out
@@ -108,7 +118,7 @@ namespace WisePharm.Finance
             //}
 
             // Set the new page content
-            newPageframe.Content = currentPage.ToBasePage(currentPageViewModel);
+            newPageFrame.Content = currentPage.ToBasePage(currentPageViewModel);
 
             return value;
         }

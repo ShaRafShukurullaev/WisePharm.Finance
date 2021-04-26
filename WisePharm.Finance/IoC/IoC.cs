@@ -19,6 +19,11 @@ namespace WisePharm.Finance
         public static IKernel Kernel { get; private set; } = new StandardKernel();
 
         /// <summary>
+        /// A shurtcut to access the <see cref="IUIManager"/>
+        /// </summary>
+        public static IUIManager UI => IoC.Get<IUIManager>();
+
+        /// <summary>
         /// The static property that allows to get object from <see cref="ApplicationViewModel"/>
         /// </summary>
         public static ApplicationViewModel ApplicationVM => IoC.Get<ApplicationViewModel>();
@@ -37,11 +42,18 @@ namespace WisePharm.Finance
             await BindViewModel();
         }
 
+        /// <summary>
+        /// Binds all singleton view models 
+        /// </summary>
+        /// <returns></returns>
         private static async Task BindViewModel()
         {
             await Task.Delay(1);
             // Bind to a single instance of Application view model
             Kernel.Bind<ApplicationViewModel>().ToConstant(new ApplicationViewModel());
+            
+            // Bind to a single instance of Asosiy menu view model
+            Kernel.Bind<MainMenuViewModel>().ToConstant(new MainMenuViewModel());
 
         }
 

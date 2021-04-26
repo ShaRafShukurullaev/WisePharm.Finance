@@ -7,9 +7,7 @@ namespace WisePharm.Finance
 {
     public class MainMenuViewModel : BaseViewModel
     {
-
         #region Public Properties
-
 
         /// <summary>
         /// The variable that stores current time
@@ -17,60 +15,60 @@ namespace WisePharm.Finance
         public string Time { get; set; }
 
         /// <summary>
+        /// Login view model 
+        /// </summary>
+        public LoginPageViewModel LoginViewModel { get; set; }
+
+        /// <summary>
         /// The variable that stores index of 
         /// </summary>
-        public int SelectedIndex { get; set; }
+        public int SelectedIndex { get; set; } = 0;
 
-
+        public ObservableCollection<MainMenuItemViewModel> items;
         /// <summary>
-        /// The private object that controls all menu items
-        /// </summary>
-        private ObservableCollection<MainMenuItemViewModel> _items;
-
-        /// <summary>
-        /// The public object that implement <see cref="_items"/> list
-        /// </summary>
-        public ObservableCollection<MainMenuItemViewModel> items
+        /// The menu button list items for the list
+        /// </summary>  
+        public ObservableCollection<MainMenuItemViewModel> Items
         {
             get
             {
-                _items = new ObservableCollection<MainMenuItemViewModel>();
+                items = new ObservableCollection<MainMenuItemViewModel>();
 
-                IndexMain = _items.Count;
+                //if (LoginModel == null)
+                //    return null;
 
-                _items.Add(new MainMenuItemViewModel
+                // Asosiy menu button index berilmoqda
+                IndexMain = items.Count;
+
+                // Menuga Asosiy oyna buttonini qoshish
+                items.Add(new MainMenuItemViewModel
                 {
-                    Text = "Главный",
+                    Text = "Asosiy oyna",
                     Icon = "\uf015",
                     IsSelected = true,
                     ClickCommand = new RelayParametrizedCommand(async (parameter) =>
-                    {
-                        await GotoPage(ApplicationPage.MainPage);
-                    })
+                       await GotoPage(ApplicationPage.MainPage))
                 });
 
-                IndexBuy = _items.Count;
-                _items.Add(new MainMenuItemViewModel
+                // Buyurtma menu button index berilmoqda
+                IndexBuy = items.Count;
+
+                // Menuga Buyurtmalar buttonini qoshish
+                items.Add(new MainMenuItemViewModel
                 {
-                    Text = "Главный",
-                    Icon = "\uf015",
-                    IsSelected = false,
+                    Text = "Buyurtmalar",
+                    Icon = "\uf07a",
                     ClickCommand = new RelayParametrizedCommand(async (parameter) =>
-                    {
-                        await GotoPage(ApplicationPage.Login);
-                    })
+                       await GotoPage(ApplicationPage.Login))
                 });
 
-                return _items;
+                return items;
             }
 
             set
             {
-                if (_items != value)
-                {
-                    _items = value;
-                }
-
+                if (items != value)
+                    items = value;
             }
         }
 
@@ -86,7 +84,7 @@ namespace WisePharm.Finance
         /// <summary>
         /// The Buy button index
         /// </summary>
-        public int IndexBuy{ get; set; }
+        public int IndexBuy { get; set; }
 
         /// <summary>
         /// The SaleButton index
@@ -115,37 +113,50 @@ namespace WisePharm.Finance
 
         #endregion
 
-        private async Task GotoPage(ApplicationPage page)
+        public async Task GotoPage(ApplicationPage page)
         {
+            string title;
             int index = 0;
             switch (page)
             {
                 case ApplicationPage.MainPage:
+                    //title = "Asosiy hisobotlar yuklanmoqda...";
                     index = IndexMain;
                     break;
-
                 case ApplicationPage.Login:
+                    //title = "Buyurtmalar ro'yhati olinmoqda...";
                     index = IndexBuy;
                     break;
             }
 
+
+            // Yangi oynaga otilmoqda
             await RunCommandAsync(() => IoC.ApplicationVM.ProgressDialogVisible, async () =>
             {
-                if(page == ApplicationPage.MainPage)
+                if (page == ApplicationPage.MainPage)
                 {
-                    IoC.ApplicationVM.GotoPage(page, new MainPageViewModel());
+                    // Yangi oynaga transport royhatini berib yuborilmoqda
+                    IoC.ApplicationVM.GoToPage(page, new MainPageViewModel());
+
                 }
                 else if (page == ApplicationPage.Login)
                 {
-                    IoC.ApplicationVM.GotoPage(page, new LoginPageViewModel());
+
+                    // Yangi oynaga transport royhatini berib yuborilmoqda
+                    IoC.ApplicationVM.GoToPage(page, new LoginPageViewModel());
                 }
 
+                // Menudagi tanlangan buttonni tanlanmagan 
                 items[SelectedIndex].IsSelected = false;
 
+                // Tanlangan indexni belgilash
                 SelectedIndex = index;
 
+                // Select this menu button
                 items[index].IsSelected = true;
+
             });
+
         }
 
         public DispatcherTimer _timer;
@@ -165,7 +176,7 @@ namespace WisePharm.Finance
             };
             _timer.Start();
 
-            items = new ObservableCollection<MainMenuItemViewModel>();
+            Items = new ObservableCollection<MainMenuItemViewModel>();
         }
 
         #endregion

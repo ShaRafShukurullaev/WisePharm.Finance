@@ -2,7 +2,7 @@
 
 namespace WisePharm.Finance
 {
-    public class MainMenuItemViewModel
+    public class MainMenuItemViewModel : BaseViewModel
     {
         #region Public Properties
 
