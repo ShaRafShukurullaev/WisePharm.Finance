@@ -2,20 +2,31 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:WisePharm.Finance" 
                     xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+
+    <!-- Fonts -->
     <FontFamily x:Key="MontserratThin">/Fonts/Montserrat-Thin.ttf#Montserrat Thin</FontFamily>
     <FontFamily x:Key="MontserratRegular">/Fonts/Montserrat-Regular.ttf#Montserrat Regular</FontFamily>
     <FontFamily x:Key="MontserratMedium">/Fonts/Montserrat-Medium.ttf#Montserrat Medium</FontFamily>
     <FontFamily x:Key="MontserratSemiBold">/Fonts/Montserrat-SemiBold.ttf#Montserrat SemiBold</FontFamily>
     <FontFamily x:Key="MontserratBold">/Fonts/Montserrat-Bold#Montserrat Bold</FontFamily>
     <FontFamily x:Key="FontAwesome">/Fonts/fontawesome-webfont.ttf#FontAwesome</FontFamily>
-    
-    <system:Double x:Key="FontSizeSmaller">10</system:Double>
-    <system:Double x:Key="FontSizeSmall">12</system:Double>
-    <system:Double x:Key="FontSizeRegular">14</system:Double>
-    <system:Double x:Key="FontSizeLarge">20</system:Double>
-    <system:Double x:Key="FontSizeXLarge">24</system:Double>
-    <system:Double x:Key="FontSizeXXLarge">30</system:Double>
 
+    <!-- Static size-->
+    <system:Double x:Key="FontSize10">10</system:Double>
+    <system:Double x:Key="FontSize12">12</system:Double>
+    <system:Double x:Key="FontSize14">14</system:Double>
+    <system:Double x:Key="FontSize16">16</system:Double>
+    <system:Double x:Key="FontSize18">18</system:Double>
+    <system:Double x:Key="FontSize20">20</system:Double>
+    <system:Double x:Key="FontSize22">22</system:Double>
+    <system:Double x:Key="FontSize24">24</system:Double>
+    <system:Double x:Key="FontSize26">26</system:Double>
+    <system:Double x:Key="FontSize28">28</system:Double>
+    <system:Double x:Key="FontSize30">30</system:Double>
+
+
+    <!-- Awesome Icon texts -->
     <system:String x:Key="FontAwesomeHomeIcon">&#xf015;</system:String>
     <system:String x:Key="FontAwesomeShoppingCartIcon">&#xf07a;</system:String>
     <system:String x:Key="FontAwesomeBuyIcon">&#xf0b1;</system:String>
@@ -24,5 +35,24 @@
     <system:String x:Key="FontAwesomeChartIcon">&#xf1fe;</system:String>
     <system:String x:Key="FontAwesomeServiceIcon">&#xf085;</system:String>
     <system:String x:Key="FontAwesomeLogoutIcon">&#xf08b;</system:String>
+    <system:String x:Key="FontAwesomeUserIcon">&#xf007;</system:String>
+    <system:String x:Key="FontAwesomeLockIcon">&#xf023;</system:String>
+    <system:String x:Key="FontAwesomeCloseIcon">&#xf057;</system:String>
+    <system:String x:Key="FontAwesomeEditIcon">&#xf056;</system:String>
+    <system:String x:Key="FontAwesomeAddIcon">&#xf055;</system:String>
+    <system:String x:Key="FontAwesomeInfoIcon">&#xf05a;</system:String>
+    <system:String x:Key="FontAwesomeLinkIcon">&#xf0c1;</system:String>
+    <system:String x:Key="FontAwesomeCalendarIcon">&#xf073;</system:String>
+    <system:String x:Key="FontAwesomeLoadingIcon">&#xf110;</system:String>
+    <system:String x:Key="FontAwesomeLocationIcon">&#xf041;</system:String>
+    <system:String x:Key="FontAwesomeBellIcon">&#xf0f3;</system:String>
+    <system:String x:Key="FontAwesomeKlentIcon">&#xf0c0;</system:String>
+    <system:String x:Key="FontAwesomeRegionIcon">&#xf124;</system:String>
+    <system:String x:Key="FontAwesomeTransportIcon">&#xf0d1;</system:String>
+    <system:String x:Key="FontAwesomeTarifIcon">&#xf135;</system:String>
+    <system:String x:Key="FontAwesomeHistoryIcon">&#xf1da;</system:String>
+    <system:String x:Key="FontAwesomeOtmenIcon">&#xf057;</system:String>
+    <system:String x:Key="FontAwesomeCartIcon">&#xf07a;</system:String>
+    <system:String x:Key="FontAwesomeComputerIcon">&#xf108;</system:String>
 
 </ResourceDictionary>

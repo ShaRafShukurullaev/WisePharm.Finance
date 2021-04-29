@@ -15,6 +15,8 @@ namespace WisePharm.Finance
 
             await ApplicationSetupAsync();
 
+            IoC.ApplicationVM.GoToPage(ApplicationPage.Login);
+
             Current.MainWindow = new MainWindow();
             Current.MainWindow.Show();
         }

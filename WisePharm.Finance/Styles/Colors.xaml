@@ -5,12 +5,16 @@
     <Color x:Key="BackgroundWhite">#FFFFFF</Color>
     <SolidColorBrush x:Key="BackgroundWhiteBrush" Color="{StaticResource BackgroundWhite}"/>
 
-    <Color x:Key="LightGreen">#09AF6B</Color>
-    <SolidColorBrush x:Key="LightGreenBrush" Color="{StaticResource LightGreen}"/>
+    <Color x:Key="BackgroundLightGreen">#09AF6B</Color>
+    <SolidColorBrush x:Key="BackgroundLightGreenBrush" Color="{StaticResource BackgroundLightGreen}"/>
 
-    <Color x:Key="DarkGray">#4F4F4F</Color>
-    <SolidColorBrush x:Key="DarkGrayBrush" Color="{StaticResource DarkGray}"/>
+    <Color x:Key="BackgroundLightGray">#F5F5F5</Color>
+    <SolidColorBrush x:Key="BackgroundLightGrayBrush" Color="{StaticResource BackgroundLightGray}"/>
 
-    <Color x:Key="DarkBlack">#414141</Color>
-    <SolidColorBrush x:Key="DarkBlackBrush" Color="{StaticResource DarkBlack}"/>
+    <Color x:Key="BackgroundDark">#1E2E3D</Color>
+    <SolidColorBrush x:Key="BackgroundDarkBrush" Color="{StaticResource BackgroundDark}"/>
+
+    <Color x:Key="BackgroundGray">#C4C4C4</Color>
+    <SolidColorBrush x:Key="BackgroundGrayBrush" Color="{StaticResource BackgroundGray}"/>
+
 </ResourceDictionary>

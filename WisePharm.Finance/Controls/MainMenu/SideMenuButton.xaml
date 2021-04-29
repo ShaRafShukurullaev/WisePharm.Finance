@@ -10,7 +10,7 @@
         <Style x:Key="ContentStyle" TargetType="{x:Type ContentControl}">
             <Setter Property="Foreground" Value="{StaticResource BackgroundWhiteBrush}"/>
             <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="FontSize" Value="{StaticResource FontSizeRegular}"/>
+            <Setter Property="FontSize" Value="{StaticResource FontSize14}"/>
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="Cursor" Value="Hand"/>
             <Setter Property="Margin" Value="10 0 0 5"/>
@@ -44,7 +44,7 @@
                                                Name="Icon"
                                                FontFamily="{StaticResource FontAwesome}"
                                                Text="{Binding Icon}"
-                                               FontSize="{StaticResource FontSizeLarge}"
+                                               FontSize="{StaticResource FontSize20}"
                                                Foreground="{TemplateBinding Foreground}"/>
 
                                     <TextBlock Text="{Binding Text}"
@@ -66,8 +66,8 @@
                         <ControlTemplate.Triggers>
 
                             <DataTrigger Binding="{Binding IsSelected}" Value="True">
-                                <Setter Property="Foreground" TargetName="Icon" Value="{StaticResource LightGreenBrush}"/>
-                                <Setter Property="Foreground" TargetName="Text" Value="{StaticResource LightGreenBrush}"/>
+                                <Setter Property="Foreground" TargetName="Icon" Value="{StaticResource BackgroundLightGreenBrush}"/>
+                                <Setter Property="Foreground" TargetName="Text" Value="{StaticResource BackgroundLightGreenBrush}"/>
                                 <Setter Property="Background" TargetName="background" Value="{StaticResource BackgroundWhiteBrush}"/>
                             </DataTrigger>
                            
@@ -75,7 +75,7 @@
                                 <BeginStoryboard>
                                     <Storyboard>
                                         <ColorAnimation To="{StaticResource BackgroundWhite}" Duration="0:0:0.3" Storyboard.TargetName="container" Storyboard.TargetProperty="Background.Color" />
-                                        <ColorAnimation Duration="0:0:0.1" To="{StaticResource LightGreen}" Storyboard.TargetProperty="(Foreground).(SolidColorBrush.Color)"/>
+                                        <ColorAnimation Duration="0:0:0.1" To="{StaticResource BackgroundLightGreen}" Storyboard.TargetProperty="(Foreground).(SolidColorBrush.Color)"/>
                                     </Storyboard>
                                 </BeginStoryboard>
                             </EventTrigger>
