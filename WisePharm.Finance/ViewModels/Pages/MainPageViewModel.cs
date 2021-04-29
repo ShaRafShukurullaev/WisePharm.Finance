@@ -9,7 +9,7 @@
         /// </summary>
         public MainPageViewModel()
         {
-
+            IoC.ApplicationVM.MainTitle = "Menu";
         }
         #endregion
     }

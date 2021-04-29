@@ -36,18 +36,16 @@
                         </Grid.ColumnDefinitions>
 
                         <!-- SQL button -->
-                        <Button Style="{StaticResource MainCorner}"
+                        <Button Style="{StaticResource MainCornergreen}"
                                 Width="80"
                                 Content="SQL"
-                                Command="{Binding SQLCommand}"
-                                />
+                                Command="{Binding SQLCommand}" />
 
                         <!-- DBF button -->
                         <Button Grid.Column="1" Background="{StaticResource BackgroundLightGrayBrush}"
-                                Style="{StaticResource MainCorner}" Width="80"
+                                Style="{StaticResource MainCornergreen}" Width="80"
                                 Content="DBF" Foreground="{StaticResource BackgroundDarkBrush}"
-                                Command="{Binding DBFCommand}"
-                                />
+                                Command="{Binding DBFCommand}" />
 
                     </Grid>
 
@@ -56,8 +54,7 @@
                                 Height="35" 
                                 Padding="5 2"
                                 CornerRadius="6"
-                                Margin="0 15 0 5"
-                                >
+                                Margin="0 15 0 5" >
                         <!-- Login edit text-->
                         <Grid>
 
@@ -167,22 +164,21 @@
                     </Border>
 
                     <!-- To Come in button -->
-                    <Button Style="{StaticResource MainCorner}"
+                    <Button Style="{StaticResource MainCornergreen}"
                             HorizontalAlignment="Center"
                             Margin="0 5 0 10"
-                            Padding="30 0"
+                            Padding="35 0"
                             Height="35"
                             Content="Войти"
                             Command="{Binding ToComeInCommand}"/>
 
                     <!-- Registratsion button -->
-                    <Button Style="{StaticResource MainCorner}"
+                    <Button Style="{StaticResource MainCornerTranspalet}"
                             HorizontalAlignment="Center"
                             Margin="0 5 0 0"
                             Height="35"
                             Padding="30 0"
                             Foreground="{StaticResource BackgroundDarkBrush}"
-                            Background="Transparent"
                             Content="Регистрация"
                             Command="{Binding RegisterCommand}"/>
 

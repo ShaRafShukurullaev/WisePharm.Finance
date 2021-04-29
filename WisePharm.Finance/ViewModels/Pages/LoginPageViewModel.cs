@@ -55,9 +55,17 @@ namespace WisePharm.Finance
         {
             IoC.ApplicationVM.MainTitle = "Login";
             ToComeInCommand = new RelayParametrizedCommand(async (param) => await ToComeInAsync(param));
+            RegisterCommand = new RelayParametrizedCommand(async (param) => await RegisterAsync(param));
         }
 
+
         #endregion
+
+        #region Commands methods
+        private async Task RegisterAsync(object param)
+        {
+            IoC.ApplicationVM.AsosiyMenuVisible ^= true;
+        }
 
         /// <summary>
         /// Attempts to log the user in 
@@ -66,7 +74,11 @@ namespace WisePharm.Finance
         /// <returns></returns>
         private async Task ToComeInAsync(object param)
         {
-            IoC.ApplicationVM.AsosiyMenuVisible ^= true;
+            IoC.MainMenu.LoginViewModel = this;
+
+            IoC.ApplicationVM.GoToPage(ApplicationPage.MainPage, this);
         }
+
+        #endregion
     }
 }

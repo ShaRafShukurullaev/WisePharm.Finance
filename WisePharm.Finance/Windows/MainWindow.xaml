@@ -40,7 +40,8 @@
                     Panel.ZIndex="2" Opacity="0.5">
 
                 <Border.Effect>
-                    <BlurEffect Radius="20" />
+                    <DropShadowEffect Direction="0" BlurRadius="10" Opacity="0.5"
+                                      ShadowDepth="0" Color="{StaticResource BackgroundDark}" />
                 </Border.Effect>
 
                 <Border Background="{StaticResource BackgroundDarkBrush}"

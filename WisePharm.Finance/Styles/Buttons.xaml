@@ -8,8 +8,8 @@
         <Setter Property="Focusable" Value="False"/>
     </Style>
 
-    <!-- Main corner button -->
-    <Style TargetType="{x:Type Button}" x:Key="MainCorner" BasedOn="{StaticResource Base}">
+    <!-- Main corner green button -->
+    <Style TargetType="{x:Type Button}" x:Key="MainCornergreen" BasedOn="{StaticResource Base}">
         <Setter Property="FontFamily" Value="{StaticResource MontserratMedium}"/>
         <Setter Property="FontSize" Value="{StaticResource FontSize14}"/>
         <Setter Property="Foreground" Value="{StaticResource BackgroundWhiteBrush}"/>
@@ -28,11 +28,37 @@
                                    FontSize="{TemplateBinding FontSize}"
                                    FontFamily="{TemplateBinding FontFamily}"
                                    VerticalAlignment="Center"
-                                   HorizontalAlignment="Center"
-                                   />
+                                   HorizontalAlignment="Center"/>
 
                     </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 
+    <!-- Main corner transpalet button-->
+    <Style TargetType="{x:Type Button}" x:Key="MainCornerTranspalet" BasedOn="{StaticResource Base}">
+        <Setter Property="FontFamily" Value="{StaticResource MontserratMedium}"/>
+        <Setter Property="FontSize" Value="{StaticResource FontSize14}"/>
+        <Setter Property="Foreground" Value="{StaticResource BackgroundWhiteBrush}"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Height" Value="30" />
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <!-- Border container -->
+                    <Border Background="{TemplateBinding Background}"
+                            CornerRadius="15"
+                            Padding="{TemplateBinding Padding}">
+
+                        <TextBlock Text="{TemplateBinding Content}"
+                                   FontSize="{TemplateBinding FontSize}"
+                                   FontFamily="{TemplateBinding FontFamily}"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"/>
+
+                    </Border>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
