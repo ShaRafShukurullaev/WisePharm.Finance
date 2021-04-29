@@ -15,7 +15,7 @@
             <!-- Main border -->
             <Border VerticalAlignment="Center"
                     CornerRadius="12"
-                    Width="300"
+                    Width="330"
                     Padding="20"
                     Background="{StaticResource BackgroundWhiteBrush}">
 

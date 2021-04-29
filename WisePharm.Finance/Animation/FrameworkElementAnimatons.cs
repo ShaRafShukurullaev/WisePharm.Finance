@@ -10,7 +10,7 @@ namespace WisePharm.Finance
     ///</summarly>
     public static class FrameworkElementAnimatons
     {
-        #region Slide In/Out
+        #region Slide and Fade In/Out
 
         /// <summary>
         /// Slide and Fade an element in
@@ -98,7 +98,7 @@ namespace WisePharm.Finance
             sb.Begin(element);
 
             // Make page visible only if we are animating or its the first load 
-            if (seconds != 0 || firstLoad)
+            if (seconds != 0)
                 element.Visibility = Visibility.Visible;
 
             // Wait for it to finish

@@ -7,7 +7,9 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         WindowState="Normal"
-        Title="MainWindow" Height="600" Width="800">
+        Activated="Window_Activated"
+        Deactivated="Window_Deactivated"
+        Title="{Binding ApplicationViewModel.MainTitle, Source={x:Static local:ViewModelLocator.Instance}}" Height="600" Width="800">
 
     <Border>
         <!-- Main container -->
@@ -17,23 +19,85 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-
             <!-- Page Host to replace page-->
-            <local:PageHost Grid.Column="1" 
+            <local:PageHost Grid.Column="1"
                             CurrentPage="{Binding ApplicationViewModel.CurrentPage, 
                                 Source={x:Static local:ViewModelLocator.Instance}}"
                             CurrentPageViewModel="{Binding ApplicationViewModel.CurrentPageViewModel,
-                                        Source={x:Static local:ViewModelLocator.Instance}}" />
+                                Source={x:Static local:ViewModelLocator.Instance}}" />
 
             <!-- Side menu-->
-            <local:SideMenuControl Width="250">
+            <local:SideMenuControl Width="250" 
+                   local:AnimateSlideInFromLeftProperty.Value="{Binding ApplicationViewModel.AsosiyMenuVisible, 
+                         Source={x:Static local:ViewModelLocator.Instance}}">
+
                 <local:MenuButtonList />
+
             </local:SideMenuControl>
 
             <!-- Dimmerly Overlay-->
-            <Border Grid.ColumnSpan="2"/>
+            <Border Grid.ColumnSpan="2"
+                    Panel.ZIndex="2" Opacity="0.5">
+
+                <Border.Effect>
+                    <BlurEffect Radius="20" />
+                </Border.Effect>
+
+                <Border Background="{StaticResource BackgroundDarkBrush}"
+                        local:AnimateFadeInProperty.Value="{Binding ApplicationViewModel.DimmableOverlayVisible,
+                        Source={x:Static local:ViewModelLocator.Instance}}" />
+
+            </Border>
+
+            <!-- Progress-->
+            <Border Background="{StaticResource BackgroundProgressTranspaletBrush}"
+                    Panel.ZIndex="3" Grid.ColumnSpan="2"
+                    Visibility="{Binding ApplicationViewModel.ProgressDialogVisible, 
+                                 Source={x:Static local:ViewModelLocator.Instance},
+                                 Converter={local:BooleanToVisiblityGoneConverter},
+                                 FallbackValue=Collapsed}">
+                <Border.Effect>
+                    <BlurEffect Radius="10" />
+                </Border.Effect>
+
+                <Border CornerRadius="10" Background="White"
+                        local:AnimateSlideInFromBottomMarginProperty.Value="{Binding ApplicationViewModel.ProgressDialogVisible,
+                                                                            Source={x:Static local:ViewModelLocator.Instance}}"
+                        VerticalAlignment="Center" HorizontalAlignment="Center" Padding="10">
+
+                    <Grid Margin="40 10" MaxWidth="300">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <!-- Spinning -->
+                        <TextBlock Style="{StaticResource SpinningText}"
+                                   HorizontalAlignment="Center"
+                                   FontSize="{StaticResource FontSize24}"
+                                   Grid.Row="0"/>
+
+                        <!-- Progress Text-->
+                        <TextBlock Text="{Binding ApplicationViewModel.ProgressDialogText, 
+                                   Source={x:Static local:ViewModelLocator.Instance},
+                                   FallbackValue=Loading}"
+                                   TextTrimming="WordEllipsis"
+                                   HorizontalAlignment="Center"
+                                   TextWrapping="Wrap"
+                                   Grid.Row="1"
+                                   Margin="0 10 0 0"
+                                   Style="{StaticResource DataGridElementStyle}"
+                                   Foreground="{StaticResource BackgroundDarkBrush}" />
+
+                    </Grid>
+
+                </Border>
+
+            </Border>
 
         </Grid>
+
     </Border>
 
 </Window>

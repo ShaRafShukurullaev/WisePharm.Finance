@@ -34,8 +34,8 @@ namespace WisePharm.Finance
             {
                 items = new ObservableCollection<MainMenuItemViewModel>();
 
-                //if (LoginModel == null)
-                //    return null;
+                if (LoginViewModel == null)
+                    return null;
 
                 // Asosiy menu button index berilmoqda
                 IndexMain = items.Count;
@@ -48,18 +48,6 @@ namespace WisePharm.Finance
                     IsSelected = true,
                     ClickCommand = new RelayParametrizedCommand(async (parameter) =>
                        await GotoPage(ApplicationPage.MainPage))
-                });
-
-                // Buyurtma menu button index berilmoqda
-                IndexBuy = items.Count;
-
-                // Menuga Buyurtmalar buttonini qoshish
-                items.Add(new MainMenuItemViewModel
-                {
-                    Text = "Buyurtmalar",
-                    Icon = "\uf07a",
-                    ClickCommand = new RelayParametrizedCommand(async (parameter) =>
-                       await GotoPage(ApplicationPage.Login))
                 });
 
                 return items;
@@ -123,10 +111,6 @@ namespace WisePharm.Finance
                     //title = "Asosiy hisobotlar yuklanmoqda...";
                     index = IndexMain;
                     break;
-                case ApplicationPage.Login:
-                    //title = "Buyurtmalar ro'yhati olinmoqda...";
-                    index = IndexBuy;
-                    break;
             }
 
 
@@ -138,12 +122,6 @@ namespace WisePharm.Finance
                     // Yangi oynaga transport royhatini berib yuborilmoqda
                     IoC.ApplicationVM.GoToPage(page, new MainPageViewModel());
 
-                }
-                else if (page == ApplicationPage.Login)
-                {
-
-                    // Yangi oynaga transport royhatini berib yuborilmoqda
-                    IoC.ApplicationVM.GoToPage(page, new LoginPageViewModel());
                 }
 
                 // Menudagi tanlangan buttonni tanlanmagan 

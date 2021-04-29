@@ -11,7 +11,7 @@
         /// <summary>
         /// The current page of the application
         /// </summary>
-        public ApplicationPage CurrentPage { get; private set; } = ApplicationPage.MainPage;
+        public ApplicationPage CurrentPage { get; private set; } = ApplicationPage.Login;
 
         /// <summary>
         /// The view model to use for the current page when the CurrentPage changes
@@ -20,6 +20,11 @@
         ///       at the time it changes
         /// </summary>
         public BaseViewModel CurrentPageViewModel { get; set; }
+
+        /// <summary>
+        /// Main title string 
+        /// </summary>
+        public string MainTitle { get; set; }
 
         /// <summary>
         /// True if the side menu should be shown

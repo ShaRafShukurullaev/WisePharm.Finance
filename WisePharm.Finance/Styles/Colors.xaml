@@ -17,4 +17,7 @@
     <Color x:Key="BackgroundGray">#C4C4C4</Color>
     <SolidColorBrush x:Key="BackgroundGrayBrush" Color="{StaticResource BackgroundGray}"/>
 
+    <Color x:Key="BackgroundProgressTranspalet">#4009352D</Color>
+    <SolidColorBrush x:Key="BackgroundProgressTranspaletBrush" Color="{StaticResource BackgroundProgressTranspalet}"/>
+
 </ResourceDictionary>

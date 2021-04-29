@@ -2,6 +2,68 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:WisePharm.Finance.Styles">
 
+    <!-- Base text -->
+    <Style TargetType="{x:Type TextBlock}" x:Key="BaseTextBlockStyle">
+        <Setter Property="FontFamily" Value="{StaticResource MontserratMedium}" />
+        <Setter Property="FontSize" Value="15"/>
+    </Style>
+
+    <!-- Head -->
+    <Style TargetType="{x:Type TextBlock}" x:Key="HeaderText" BasedOn="{StaticResource BaseTextBlockStyle}">
+        <Setter Property="Foreground" Value="{StaticResource ForegroundMainBrush}" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="Margin" Value="0 6" />
+    </Style>
+
+
+    <!--Datagrid cell element style-->
+    <Style x:Key="DataGridElementStyleRight" TargetType="{x:Type TextBlock}">
+        <Setter Property="HorizontalAlignment" Value="Right"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="5 2 10 2"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="Foreground" Value="{StaticResource BackgroundDarkBrush}"/>
+        <Setter Property="FontFamily" Value="{StaticResource MontserratMedium}"/>
+        <Setter Property="FontSize" Value="{StaticResource FontSize14}"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+    </Style>
+
+    <!--Datagrid cell element style-->
+    <Style x:Key="DataGridElementStyleCenter" TargetType="{x:Type TextBlock}">
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="5 2 10 2"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="Foreground" Value="{StaticResource BackgroundDarkBrush}"/>
+        <Setter Property="FontFamily" Value="{StaticResource MontserratMedium}"/>
+        <Setter Property="FontSize" Value="{StaticResource FontSize14}"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+    </Style>
+
+    <!--Datagrid cell editing element style-->
+    <Style x:Key="DataGridEditingElementStyle" TargetType="{x:Type TextBox}">
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="5 4"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="Foreground" Value="{StaticResource BackgroundDarkBrush}"/>
+        <Setter Property="FontFamily" Value="{StaticResource MontserratMedium}"/>
+        <Setter Property="FontSize" Value="{StaticResource FontSize14}"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+
+    </Style>
+
+    <!--Datagrid cell element style-->
+    <Style x:Key="DataGridElementStyle" TargetType="{x:Type TextBlock}">
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="5 2"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="Foreground" Value="{StaticResource BackgroundDarkBrush}"/>
+        <Setter Property="FontFamily" Value="{StaticResource MontserratMedium}"/>
+        <Setter Property="FontSize" Value="{StaticResource FontSize14}"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+    </Style>
 
     <!--Text style for all TextBox-->
     <Style TargetType="{x:Type TextBox}">

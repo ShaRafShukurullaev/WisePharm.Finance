@@ -1,4 +1,6 @@
-﻿using System.Windows.Input;
+﻿using System;
+using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace WisePharm.Finance
 {
@@ -44,7 +46,6 @@ namespace WisePharm.Finance
 
         #endregion
 
-
         #region Constructor
 
         /// <summary>
@@ -52,8 +53,20 @@ namespace WisePharm.Finance
         /// </summary>
         public LoginPageViewModel()
         {
-
+            IoC.ApplicationVM.MainTitle = "Login";
+            ToComeInCommand = new RelayParametrizedCommand(async (param) => await ToComeInAsync(param));
         }
+
         #endregion
+
+        /// <summary>
+        /// Attempts to log the user in 
+        /// </summary>
+        /// <param name="param"></param>
+        /// <returns></returns>
+        private async Task ToComeInAsync(object param)
+        {
+            IoC.ApplicationVM.AsosiyMenuVisible ^= true;
+        }
     }
 }

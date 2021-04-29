@@ -217,6 +217,8 @@
     </Compile>
     <Compile Include="ValueConverters\ApplicationPageHelper.cs" />
     <Compile Include="ValueConverters\BaseValueConverter.cs" />
+    <Compile Include="ValueConverters\BooleanToVisiblityGoneConverter.cs" />
+    <Compile Include="ValueConverters\BooleanToVisiblityConverter.cs" />
     <Compile Include="ViewModels\Application\ApplicationViewModel.cs" />
     <Compile Include="ViewModels\Application\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\Application\ViewModelLocator.cs" />

@@ -258,7 +258,7 @@ namespace WisePharm.Finance
                 animation.From = 0;
 
             // Set the target property name 
-            Storyboard.SetTargetProperty(animation, new PropertyPath("Margin"));
+            Storyboard.SetTargetProperty(animation, new PropertyPath("Opacity"));
 
             // Add this to the storyboard 
             storyboard.Children.Add(animation);
@@ -281,7 +281,7 @@ namespace WisePharm.Finance
             };
 
             // Set the target property name 
-            Storyboard.SetTargetProperty(animation, new PropertyPath("Margin"));
+            Storyboard.SetTargetProperty(animation, new PropertyPath("Opacity"));
 
             // Add this to the storyboard 
             storyboard.Children.Add(animation);

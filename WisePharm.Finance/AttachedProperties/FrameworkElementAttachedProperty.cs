@@ -1,11 +1,10 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace WisePharm.Finance.AttachedProperties
+namespace WisePharm.Finance
 {
     /// Create by Mr.Cyber
 	///<summarly>
@@ -135,4 +134,38 @@ namespace WisePharm.Finance.AttachedProperties
         }
     }
 
+    /// <summary>
+    /// Animates a framework element sliding up from the bottom on show
+    /// and sliding out to the bottom on hide
+    /// NOTE: Keeps the margin
+    /// </summar
+    public class AnimateSlideInFromBottomMarginProperty : AnimateBasePropety<AnimateSlideInFromBottomMarginProperty>
+    {
+        protected override async void DoAnimation(FrameworkElement element, bool value, bool firstLoad)
+        {
+            if (value)
+                // Animate In 
+                await element.SlideAndFadeInAsync(AnimationSlideDirection.Bottom, firstLoad, firstLoad ? 0 : 0.3f, keepMargin: true);
+            else
+                // Animate out 
+                await element.SlideAndFadeOutAsync(AnimationSlideDirection.Bottom, firstLoad ? 0 : 0.3f, keepMargin: true);
+        }
+    }
+
+    /// <summary>
+    /// Animates a framework element fading in on show
+    /// and fading out on 
+    /// </summary>
+    public class AnimateFadeInProperty : AnimateBasePropety<AnimateFadeInProperty>
+    {
+        protected override async void DoAnimation(FrameworkElement element, bool value, bool firstLoad)
+        {
+            if (value)
+                // Animation in 
+                await element.FadeInAsync(firstLoad, firstLoad ? 0 : 0.3f);
+            else
+                // Animate out 
+                await element.FadeOutAsync(firstLoad ? 0 : 0.3f);
+        }
+    }
 }
