@@ -131,7 +131,7 @@
                     <!--ComboBox choose server border-->
                     <Border Background="{StaticResource BackgroundLightGrayBrush}"
                                 Height="35" 
-                                Padding="5 2"
+                                Padding="5 2 0 0"
                                 CornerRadius="6"
                                 Margin="0 5 0 10">
                         <Grid >
