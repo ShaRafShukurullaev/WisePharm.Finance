@@ -1,5 +1,5 @@
 ﻿
-namespace WisePharm.Finance.Animation
+namespace WisePharm.Finance
 {
     /// Create by Mr.Cyber
 	///<summarly>

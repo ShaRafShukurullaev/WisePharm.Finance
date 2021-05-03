@@ -1,6 +1,8 @@
 ﻿
 using System;
 using System.ComponentModel;
+using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace WisePharm.Finance
@@ -22,8 +24,28 @@ namespace WisePharm.Finance
 
         #region Public Properties 
 
-        // There we can write animaton 
+        /// <summary>
+        /// The animation the play when the page is first loaded
+        /// </summary>
+        public PageAnimation PageLoadAnimation { get; set; } = PageAnimation.SlideAndFadeInFromRight;
 
+        /// <summary>
+        /// The animation the play when the page is unloaded
+        /// </summary>
+        public PageAnimation PageUnloadAnimation { get; set; } = PageAnimation.SlideAndFadeOutFromLeft;
+
+        /// <summary>
+        /// The time any slide animation takes to complete 
+        /// </summary>
+        public float SlideSeconds { get; set; } = 0.4f;
+
+        /// <summary>
+        /// A flag to indicate if this page should animate out on load.
+        /// Useful for when we are moving the page to another frame
+        /// </summary>
+        public bool ShouldAnimationOut { get; set; }
+
+        // There we can write animaton 
         /// <summary>
         /// The View Model associated with this page
         /// </summary>
@@ -69,9 +91,67 @@ namespace WisePharm.Finance
                 return;
 
             // There we can write animation loading 
+            if (PageLoadAnimation != PageAnimation.None)
+                Visibility = System.Windows.Visibility.Collapsed;
+
+            Loaded += BasePage_LoadedAsync;
         }
 
         #endregion
+
+        #region Animation Load / Unload
+
+        private async void BasePage_LoadedAsync(object sender, System.Windows.RoutedEventArgs e)
+        {
+            // If we are setup to animate out on load
+            if (ShouldAnimationOut)
+                // Animate out the page
+                await AnimationOutAsync();
+            else
+                // Animate the page in 
+                await AnimationInAsync();
+        }
+
+        /// <summary>
+        /// Animates the page in 
+        /// </summary>
+        /// <returns></returns>
+        private async Task AnimationInAsync()
+        {
+            // Make sure we have something to do 
+            if (PageLoadAnimation == PageAnimation.None)
+                return;
+
+            switch (PageLoadAnimation)
+            {
+                case PageAnimation.SlideAndFadeInFromRight:
+
+                    // Start the animation 
+                    await this.SlideAndFadeInAsync(AnimationSlideDirection.Right, false, SlideSeconds, size: (int)Application.Current.MainWindow.Width);
+                    break;
+            }
+
+        }
+
+        private async Task AnimationOutAsync()
+        {
+            // Make sure we have something to do
+            if (PageUnloadAnimation == PageAnimation.None)
+                return;
+
+            switch (PageUnloadAnimation)
+            {
+                case PageAnimation.SlideAndFadeOutFromLeft:
+
+                    // Start the animation
+                    await this.SlideAndFadeOutAsync(AnimationSlideDirection.Left, SlideSeconds);
+
+                    break;
+            }
+        }
+
+        #endregion
+
     }
 
     /// <summary>

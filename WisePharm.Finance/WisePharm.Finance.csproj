@@ -72,11 +72,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Controls\MainMenu\MenuButtonList.xaml">
+    <Page Include="Controls\MainMenu\MenuButtonListControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\MainMenu\SideMenuButton.xaml">
+    <Page Include="Controls\MainMenu\SideMenuButtonItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -171,11 +171,11 @@
     <Compile Include="AttachedProperties\BaseAttachedProperty.cs" />
     <Compile Include="AttachedProperties\FrameworkElementAttachedProperty.cs" />
     <Compile Include="AttachedProperties\TextAttachedProperty.cs" />
-    <Compile Include="Controls\MainMenu\MenuButtonList.xaml.cs">
-      <DependentUpon>MenuButtonList.xaml</DependentUpon>
+    <Compile Include="Controls\MainMenu\MenuButtonListControl.xaml.cs">
+      <DependentUpon>MenuButtonListControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\MainMenu\SideMenuButton.xaml.cs">
-      <DependentUpon>SideMenuButton.xaml</DependentUpon>
+    <Compile Include="Controls\MainMenu\SideMenuButtonItem.xaml.cs">
+      <DependentUpon>SideMenuButtonItem.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\MainMenu\SideMenuControl.xaml.cs">
       <DependentUpon>SideMenuControl.xaml</DependentUpon>

@@ -6,9 +6,9 @@ namespace WisePharm.Finance
     /// <summary>
     /// Interaction logic for SideMenuButton.xaml
     /// </summary>
-    public partial class SideMenuButton : UserControl
+    public partial class SideMenuButtonItem : UserControl
     {
-        public SideMenuButton()
+        public SideMenuButtonItem()
         {
             InitializeComponent();
         }

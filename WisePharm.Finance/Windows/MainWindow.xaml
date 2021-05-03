@@ -20,7 +20,7 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <!-- Page Host to replace page-->
+            <!-- Page Host to replace page -->
             <local:PageHost Grid.Column="1"
                             CurrentPage="{Binding ApplicationViewModel.CurrentPage, 
                                 Source={x:Static local:ViewModelLocator.Instance}}"
@@ -32,7 +32,7 @@
                    local:AnimateSlideInFromLeftProperty.Value="{Binding ApplicationViewModel.AsosiyMenuVisible, 
                          Source={x:Static local:ViewModelLocator.Instance}}">
 
-                <local:MenuButtonList />
+                <local:MenuButtonListControl />
 
             </local:SideMenuControl>
 

@@ -172,6 +172,15 @@
                             Content="Войти"
                             Command="{Binding ToComeInCommand}"/>
 
+                    <!--<Expander Name="myExpander" Background="Tan" 
+                              HorizontalAlignment="Left" Header="My Expander" 
+                              FlowDirection="RightToLeft" Width="100">
+                        <StackPanel>
+                            <Button Content="Ok"/>
+                            <Button Content="Ok"/>
+                        </StackPanel>    
+                    </Expander>-->
+
                     <!-- Registratsion button -->
                     <Button Style="{StaticResource MainCornerTranspalet}"
                             HorizontalAlignment="Center"

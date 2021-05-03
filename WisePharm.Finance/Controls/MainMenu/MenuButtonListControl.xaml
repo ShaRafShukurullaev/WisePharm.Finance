@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="WisePharm.Finance.MenuButtonList"
+﻿<UserControl x:Class="WisePharm.Finance.MenuButtonListControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -16,7 +16,7 @@
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
 
-                        <local:SideMenuButton Focusable="False"/>
+                        <local:SideMenuButtonItem Focusable="False"/>
 
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
