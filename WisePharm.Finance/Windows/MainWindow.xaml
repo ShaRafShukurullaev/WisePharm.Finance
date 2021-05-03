@@ -9,7 +9,8 @@
         WindowState="Normal"
         Activated="Window_Activated"
         Deactivated="Window_Deactivated"
-        Title="{Binding ApplicationViewModel.MainTitle, Source={x:Static local:ViewModelLocator.Instance}}" Height="600" Width="800">
+        Title="{Binding ApplicationViewModel.MainTitle, Source={x:Static local:ViewModelLocator.Instance}}" 
+        Height="600" Width="1024">
 
     <Border>
         <!-- Main container -->

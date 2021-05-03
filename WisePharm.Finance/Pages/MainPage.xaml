@@ -7,19 +7,19 @@
       xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
       mc:Ignorable="d" >
 
-    <Border Background="{StaticResource BackgroundWhiteBrush}"
-            Padding="20 20 20 10"
+    <Border Background="{StaticResource BackgroundWheatBrush}"
+            Padding="20 20 20 10" Focusable="False"
             CornerRadius="30 0 0 30">
         <ScrollViewer HorizontalScrollBarVisibility="Auto" 
                       VerticalScrollBarVisibility="Auto">
-            <Grid>
+            <Grid Focusable="False">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                
+
                 <!--Header border-->
-                
+
                 <Border CornerRadius="10" 
                     Padding="10"
                     Background="{StaticResource BackgroundLightGreenBrush}"
@@ -39,7 +39,7 @@
                     </StackPanel>
 
                 </Border>
-                
+
                 <!--Main Content-->
 
                 <StackPanel Grid.Row="1" Margin="0 20">
@@ -48,10 +48,12 @@
 
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="10"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <!--Sale by hours-->
-                        <Border CornerRadius="10" MinHeight="294">
+                        <Border CornerRadius="10" Background="{StaticResource BackgroundWhiteBrush}" 
+                                MinHeight="294" Padding="10">
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto"/>
@@ -63,7 +65,7 @@
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
-                                    
+
                                     <TextBlock Text="Продажа  по часам"                                               
                                                HorizontalAlignment="Left"
                                                VerticalAlignment="Center"
@@ -86,7 +88,7 @@
                                                 <lvc:Separator Step="1"/>
                                             </lvc:Axis.Separator>
                                         </lvc:Axis>
-    
+
                                     </lvc:CartesianChart.AxisX>
 
                                     <lvc:CartesianChart.AxisY>
@@ -100,7 +102,8 @@
                             </Grid>
                         </Border>
 
-                        <Border CornerRadius="10" Grid.Column="1">
+                        <Border CornerRadius="10" Background="{StaticResource BackgroundWhiteBrush}" 
+                                Grid.Column="2" Padding="10">
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto"/>
@@ -149,13 +152,14 @@
                                 </lvc:CartesianChart>
                             </Grid>
                         </Border>
+
                     </Grid>
-                    
+
                     <!--Data content-->
                     <StackPanel Orientation="Horizontal">
-                        
+
                     </StackPanel>
-                    
+
                 </StackPanel>
             </Grid>
         </ScrollViewer>

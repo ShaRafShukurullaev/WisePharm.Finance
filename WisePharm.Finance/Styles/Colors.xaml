@@ -5,6 +5,9 @@
     <Color x:Key="BackgroundWhite">#FFFFFF</Color>
     <SolidColorBrush x:Key="BackgroundWhiteBrush" Color="{StaticResource BackgroundWhite}"/>
 
+    <Color x:Key="BackgroundWheat">#FAFAFA</Color>
+    <SolidColorBrush x:Key="BackgroundWheatBrush" Color="{StaticResource BackgroundWheat}"/>
+
     <Color x:Key="BackgroundLightGreen">#09AF6B</Color>
     <SolidColorBrush x:Key="BackgroundLightGreenBrush" Color="{StaticResource BackgroundLightGreen}"/>
 
