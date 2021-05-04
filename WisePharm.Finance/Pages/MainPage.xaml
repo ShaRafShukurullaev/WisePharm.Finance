@@ -106,27 +106,16 @@
                                 Grid.Column="2" Padding="10">
                             <Grid>
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="24.8"/>
                                     <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
 
                                 <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="*"/>
-                                    </Grid.ColumnDefinitions>
-
                                     <TextBlock Text="Продажа  по часам"                                               
                                                HorizontalAlignment="Left"
                                                VerticalAlignment="Center"
                                                FontSize="{StaticResource FontSize12}"
                                                FontFamily="{StaticResource MontserratRegular}"/>
-
-                                    <ComboBox Grid.Column="1"
-                                              HorizontalAlignment="Right"
-                                              IsEditable="True"
-                                              FontSize="{StaticResource FontSize14}"
-                                              Text="20 / 01 / 2021"/>
                                 </Grid>
                                 <lvc:CartesianChart MinWidth="300"  Grid.Row="1" Margin="10, 0, 10, 20" 
                                                     Hoverable="False" DataTooltip="{x:Null}">
@@ -158,9 +147,67 @@
                     </Grid>
 
                     <!--Data content-->
-                    <StackPanel Orientation="Horizontal">
+                    <Grid Margin="0 20">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
 
-                    </StackPanel>
+                        <Border CornerRadius="10" Background="{StaticResource BackgroundWhiteBrush}" 
+                                MinHeight="294" Padding="10">
+                            <StackPanel>
+                                <TextBlock                                               
+                                               HorizontalAlignment="Left"
+                                               VerticalAlignment="Center"
+                                               FontSize="{StaticResource FontSize16}"
+                                               FontFamily="{StaticResource MontserratRegular}">
+                                    <Run Text="Обший:"/>
+                                    <Run Text="$1200" FontFamily="{StaticResource MontserratMedium}"/>
+                                </TextBlock>
+
+                                <lvc:PieChart FontSize="{StaticResource FontSize14}" 
+                                              FontFamily="{StaticResource MontserratRegular}"
+                                              MinHeight="250" 
+                                              LegendLocation="Right">
+                                    <lvc:PieChart.Series>
+                                        <lvc:PieSeries Title="Пластик" Values="40" Fill="{StaticResource LightBlueBrush}"/>
+                                        <lvc:PieSeries Title="Другие" Values="10" Fill="{StaticResource LightYellowBrush}"/>
+                                        <lvc:PieSeries Title="Возврат" Values="20" Fill="{StaticResource LightRedBrush}"/>
+                                        <lvc:PieSeries Title="Наличные" Values="50" Fill="{StaticResource BackgroundLightGreenBrush}"/>
+                                    </lvc:PieChart.Series>
+                                </lvc:PieChart>
+                            </StackPanel>
+                        </Border>
+                        <DataGrid Grid.Column="2">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="ID" 
+                                                Binding="{Binding Tartib}" 
+                                                Width="50" 
+                                                IsReadOnly="True"
+                                                MaxWidth="150"
+                                                ElementStyle="{StaticResource DataGridElementStyle}"/>
+
+                                <DataGridTextColumn Header="Контрагенты"  
+                                                IsReadOnly="True"
+                                                Width="Auto"
+                                                MinWidth="200"
+                                                ElementStyle="{StaticResource DataGridElementStyle}"/>
+
+                                <DataGridTextColumn Header="DT" 
+                                                IsReadOnly="True"
+                                                Width="Auto"
+                                                ElementStyle="{StaticResource DataGridElementStyle}"/>
+
+                                <DataGridTextColumn Header="KT"  
+                                                IsReadOnly="True"
+                                                Width="Auto"
+                                                ElementStyle="{StaticResource DataGridElementStyle}"/>
+
+                            </DataGrid.Columns>
+
+                        </DataGrid>
+                    </Grid>
 
                 </StackPanel>
             </Grid>
