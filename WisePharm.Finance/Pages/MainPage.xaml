@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:WisePharm.Finance"
       xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
       mc:Ignorable="d" >
-
+   
     <Border Background="{StaticResource BackgroundWheatBrush}"
             Padding="20 20 20 10" Focusable="False"
             CornerRadius="30 0 0 30">
@@ -179,7 +179,7 @@
                                 </lvc:PieChart>
                             </StackPanel>
                         </Border>
-                        <DataGrid Grid.Column="2">
+                        <DataGrid Grid.Column="2" Style="{StaticResource DataGridStyleToMainPage}">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="ID" 
                                                 Binding="{Binding Tartib}" 
