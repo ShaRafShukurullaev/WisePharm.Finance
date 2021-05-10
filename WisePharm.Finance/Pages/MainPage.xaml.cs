@@ -16,5 +16,10 @@ namespace WisePharm.Finance
         {
             InitializeComponent();
         }
+
+        private void DataGrid1_LoadingRow(object sender, DataGridRowEventArgs e)
+        {
+
+        }
     }
 }

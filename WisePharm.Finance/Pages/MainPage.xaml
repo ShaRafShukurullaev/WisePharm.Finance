@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:WisePharm.Finance"
       xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
       mc:Ignorable="d" >
-   
+
     <Border Background="{StaticResource BackgroundWheatBrush}"
             Padding="20 20 20 10" Focusable="False"
             CornerRadius="30 0 0 30">
@@ -171,42 +171,65 @@
                                               MinHeight="250" 
                                               LegendLocation="Right">
                                     <lvc:PieChart.Series>
-                                        <lvc:PieSeries Title="Пластик" Values="40" Fill="{StaticResource LightBlueBrush}"/>
-                                        <lvc:PieSeries Title="Другие" Values="10" Fill="{StaticResource LightYellowBrush}"/>
-                                        <lvc:PieSeries Title="Возврат" Values="20" Fill="{StaticResource LightRedBrush}"/>
+                                        <lvc:PieSeries Title="Пластик" Values="40" Fill="{StaticResource BackgroundLightBlueBrush}"/>
+                                        <lvc:PieSeries Title="Другие" Values="10" Fill="{StaticResource BackgroundLightYellowBrush}"/>
+                                        <lvc:PieSeries Title="Возврат" Values="20" Fill="{StaticResource BackgroundLightRedBrush}"/>
                                         <lvc:PieSeries Title="Наличные" Values="50" Fill="{StaticResource BackgroundLightGreenBrush}"/>
                                     </lvc:PieChart.Series>
                                 </lvc:PieChart>
                             </StackPanel>
                         </Border>
-                        <DataGrid Grid.Column="2" Style="{StaticResource DataGridStyleToMainPage}">
-                            <DataGrid.Columns>
-                                <DataGridTextColumn Header="ID" 
+
+                        <!-- Data grid border -->
+                        <Border Grid.Column="2"
+                                Style="{StaticResource DataGridParentBorderStyle}">
+                            
+                            <Grid>
+                                
+                                <!-- Data grid bacgruond border-->
+
+                                <Border Background="{StaticResource BackgroundLightGreenBrush}"
+                                        VerticalAlignment="Top" Height="45" CornerRadius="5 5 0 0" />
+                                
+                                <DataGrid x:Name="DataGrid1" 
+                                          Background="Transparent"
+                                          LoadingRow="DataGrid1_LoadingRow"
+                                          SelectedValuePath="Id"
+                                          FrozenColumnCount="3">
+                                    
+                                    <DataGrid.Columns>
+                                    
+                                        <DataGridTextColumn Header="ID" 
                                                 Binding="{Binding Tartib}" 
                                                 Width="50" 
                                                 IsReadOnly="True"
                                                 MaxWidth="150"
                                                 ElementStyle="{StaticResource DataGridElementStyle}"/>
 
-                                <DataGridTextColumn Header="Контрагенты"  
+                                        <DataGridTextColumn Header="Контрагенты"  
                                                 IsReadOnly="True"
                                                 Width="Auto"
                                                 MinWidth="200"
                                                 ElementStyle="{StaticResource DataGridElementStyle}"/>
 
-                                <DataGridTextColumn Header="DT" 
+                                        <DataGridTextColumn Header="DT" 
                                                 IsReadOnly="True"
                                                 Width="Auto"
                                                 ElementStyle="{StaticResource DataGridElementStyle}"/>
 
-                                <DataGridTextColumn Header="KT"  
+                                        <DataGridTextColumn Header="KT"  
                                                 IsReadOnly="True"
                                                 Width="Auto"
                                                 ElementStyle="{StaticResource DataGridElementStyle}"/>
 
-                            </DataGrid.Columns>
+                                    </DataGrid.Columns>
 
-                        </DataGrid>
+                                </DataGrid>
+                                
+                            </Grid>
+
+                        </Border>
+
                     </Grid>
 
                 </StackPanel>

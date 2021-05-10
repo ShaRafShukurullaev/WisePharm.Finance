@@ -23,13 +23,19 @@
     <Color x:Key="BackgroundProgressTranspalet">#4009352D</Color>
     <SolidColorBrush x:Key="BackgroundProgressTranspaletBrush" Color="{StaticResource BackgroundProgressTranspalet}"/>
 
-    <Color x:Key="LightBlue">#304FFE</Color>
-    <SolidColorBrush x:Key="LightBlueBrush" Color="{StaticResource LightBlue}"/>
+    <Color x:Key="BackgroundLightBlue">#304FFE</Color>
+    <SolidColorBrush x:Key="BackgroundLightBlueBrush" Color="{StaticResource BackgroundLightBlue}"/>
 
-    <Color x:Key="LightYellow">#FAB100</Color>
-    <SolidColorBrush x:Key="LightYellowBrush" Color="{StaticResource LightYellow}"/>
+    <Color x:Key="BackgroundLightYellow">#FAB100</Color>
+    <SolidColorBrush x:Key="BackgroundLightYellowBrush" Color="{StaticResource BackgroundLightYellow}"/>
 
-    <Color x:Key="LightRed">#E24141</Color>
-    <SolidColorBrush x:Key="LightRedBrush" Color="{StaticResource LightRed}"/>
-    
+    <Color x:Key="BackgroundLightRed">#E24141</Color>
+    <SolidColorBrush x:Key="BackgroundLightRedBrush" Color="{StaticResource BackgroundLightRed}"/>
+
+    <Color x:Key="DataGridSelectedRowColor">#201E2E3D</Color>
+    <SolidColorBrush x:Key="DataGridSelectedRowColorBrush" Color="{StaticResource DataGridSelectedRowColor}" />
+
+    <Color x:Key="DataGridAlternatingColor">#60F5F5F5</Color>
+    <SolidColorBrush x:Key="DataGridAlternatingColorBrush" Color="{StaticResource DataGridAlternatingColor}" />
+
 </ResourceDictionary>
